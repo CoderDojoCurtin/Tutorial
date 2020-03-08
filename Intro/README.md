@@ -42,20 +42,31 @@ The computer will read these in order and continue to loop blinking the light on
 The correct syntax in arduino is:
 ```cpp
 /* 
-    This is a comment block.
-    Any text inside here will be ignored by the compiler.
+	This is a comment block.
+	Any text inside here will be ignored by the compiler.
 */
 
 //  This is a comment, anything after a '//' will be ignored.
 
 void setup() {
-  pinMode(13, OUTPUT);    // Set pin 13 to output 5V.
+	pinMode(13, OUTPUT);    // Set pin 13 to output 5V.
 }
 
 void loop() {
-  digitalWrite(13, HIGH); // Set pin 13 as an output.
-  delay(1000);            // Wait 1000 ms (1 second).
-  digitalWrite(13, LOW);  // Turn off pin 13.
-  delay(1000);
+	digitalWrite(13, HIGH); // Set pin 13 as an output.
+	delay(1000);            // Wait 1000 ms (1 second).
+	digitalWrite(13, LOW);  // Turn off pin 13.
+	delay(1000);
 }
 ```
+In arduino you must have the 'functions':
+* `void setup()`
+	This will run **once** before `void loop()`
+* `void loop()`
+	This will repeat until the controller is unplugged.
+
+`pinMode(pin, type);` will set a pin to either input or output.
+`digitalWrite(pin, output);` will set a pin to 0 or 5V.
+`delay(time);` will stop the program for the specified amount of time in milliseconds.
+
+Every command must have a `;` at the end.
